@@ -129,12 +129,19 @@ include_directories(
 ## Declare a C++ executable
 add_executable(mybot_autodocking src/mybot_autodocking.cpp)
 
+add_executable(mybot_autodocking_irCode src/mybot_autodocking_irCode.cpp)
+
+
 ## Add cmake target dependencies of the executable
 ## same as for the library above
 # add_dependencies(mybot_autodocking_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
 target_link_libraries(mybot_autodocking
+   ${catkin_LIBRARIES}
+)
+
+target_link_libraries(mybot_autodocking_irCode
    ${catkin_LIBRARIES}
 )
 
